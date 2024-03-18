@@ -1,0 +1,97 @@
+    <%- include("partials/header.ejs") %>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <div class="title"><a class="navbar-brand" href="#"><img src="images/logo.png" alt="" class="logo">M<span style="color: goldenrod;">y_</span>AniList</a></div>
+        
+              <button class="btn btn-outline-success" onclick="openForm()">Add new</button>
+
+        </div>
+        </div>
+    </nav>
+
+
+    <form action="/addnew" name="addForm" id="popupForm" class="addForm" method="post">
+
+      <div class="mb-3">
+        <input type="text" name="addName" class="form-control" id="addForm" placeholder="Anime Name" required>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" name="addtext" id="addtext" rows="3" placeholder="Add a short after watch review" required></textarea>
+      </div>
+      <button class="btn btn-outline-success" type="submit">Submit</button>
+      <button class="btn btn-outline-success" onclick="closeForm()" style="background-color: crimson;">Discard</button>
+    </form>
+
+    <div class="posts">
+      <ul id="postsList">
+        <% posts.forEach(post=> { %>
+          <li class="anipost">
+            <div class="info">
+              <h2 class="head">
+                <%=post.aniname%>
+              </h2>
+
+              <div class="mid-post">
+                <p>
+                  MAL score: <%=post.score%>/10
+                
+                </p> 
+                <div class="form-grp">
+
+                  <button id="edit<%=post.id%>" class="btn btn-outline-success Edit-btn" onclick="handler('<%=post.id%>')">
+                    Edit
+                  </button>
+
+                  <form action="/delete" method="post">
+                    <button class="btn btn-outline-success Delete-btn" onchange="this.form.submit()" value="<%=post.id%>" name="DeleteId">Delete</button>
+                  </form>
+
+                 </div>   
+              </div>
+
+              <form action="/edit" method="post" class="edits">
+                <input type="hidden" class="desc" name="updatedItemId" value="<%= post.id %>">
+                <div>
+                  <textarea id="input<%=post.id%>" class="edit-post" type="text" name="updatedItemTitle"  autocomplete="off" autofocus="true" hidden="true"><%= post.description %></textarea>
+                </div>
+    
+                <button id="done<%=post.id%>" class="btn btn-outline-success Done-btn" type="submit" hidden>Done</button> 
+
+              </form>
+
+              <div class="desc" id="title<%=post.id%>">
+                <%= post.description %>
+              </div>
+            </div>
+         
+               <img src="<%=post.img%>" alt="<%=post.aniname%> image" class="ani-img">
+            
+          </li>
+        <% }); %>
+      </ul>
+        
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+
+        function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+        }
+        function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+        }
+        function handler(id) {
+          document.getElementById("title" + id).setAttribute("hidden", true)
+          document.getElementById("edit" + id).setAttribute("hidden", true)
+          document.getElementById("done" + id).removeAttribute("hidden")
+          document.getElementById("input" + id).removeAttribute("hidden")
+        }
+    </script>
+
+<%-include("partials/footer.ejs") %>

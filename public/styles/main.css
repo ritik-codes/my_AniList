@@ -1,0 +1,202 @@
+body{
+    background-color: #1A120B;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    margin: 0px;
+    background-color: #1A120B !important;
+}
+
+.navbar-brand{
+    color: #E5E5CB;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.navbar-brand:hover{
+    color: #E5E5CB;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-decoration-color: goldenrod;
+    transform: scale(1.2);
+}
+
+.posts{
+    padding: 10% 10%;
+}
+
+.head{
+    letter-spacing: 2px;
+}
+
+#postsList{
+    padding:0px;
+}
+
+.anipost{
+    background-color: #3C2A21;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 3% 2%;
+    color: #E5E5CB;
+}
+
+.addForm{
+    display: none;
+    padding: 5% 10% 2%;
+    position: fixed;
+    width: 100%;
+    background-color: #1A120B;
+}
+
+.addForm > button{
+    background-color: #D5CEA3;
+    color: #000;
+    position: relative;
+    float: right;
+    margin-left: 10px;
+}
+
+.info{
+    width: 100%;    
+}
+
+.desc{
+    color: #fff;
+    width: 90%;
+    height: 30vh;
+    font-size: 1.4em;
+    text-align: justify;
+    letter-spacing: 2px;
+    overflow-y:auto;
+}
+
+.ani-img{
+    min-height: 20vh;
+    min-width: 30vh;
+    border-radius: 10px;
+}
+
+.form-grp{
+    display: flex;
+    justify-content:space-evenly;
+    width: 20%;
+}
+
+.Delete-btn{
+    background-color: firebrick;
+    border-color: firebrick;
+    color: #fff;
+    width: 70px;
+}
+
+.Edit-btn{
+    background-color: goldenrod;
+    border-color: goldenrod;
+    color: #fff;
+    width: 70px;
+}
+
+.Done-btn{
+    background-color: green;
+    border-color: green;
+    color: #fff;
+    width: 70px;
+}
+
+.mid-post{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+}
+
+.edit-post{
+    color: #000;
+    width: 90%;
+    height: 30vh;
+    font-size: 1.4em;
+    text-align: justify;
+    letter-spacing: 2px;
+    overflow-y:auto;
+    border-radius: 20px;
+}
+
+.edits{
+    display: block;
+}
+
+.footer{
+    background-color: #D5CEA3;
+    text-align: center;
+    height: 200px;
+    font-size: 1.2rem;
+    padding-top: 50px;
+}
+@media only screen and (max-width: 426px) {
+
+    .container-fluid > .btn{
+        transform: scale(0.5);
+    }
+    .title{
+        transform: scale(0.5);
+        margin-left: -35px;
+    }
+    .posts{
+        padding-top: 50px;
+    }
+    .anipost{
+        width: 100%;
+    }
+    .ani-img{
+        max-height: 10vh;
+        min-width: 12vh;
+    }
+    .desc{
+        font-size: 0.5em;
+        letter-spacing: 0.5px;
+        height: 12vh;
+        overflow-y: auto;
+    }
+    .head{
+        font-size: 0.8em;
+    }
+    .mid-post{
+        font-size: 0.5em;
+        align-items: end;
+        height: 25px;
+    }
+    .Edit-btn, .Delete-btn, .Done-btn{
+        height: 15px;
+        width: 12px;
+        font-size: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 14px;
+        border-radius: 4px;
+        margin-left: 1px;
+    }
+    .form-grp{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .edit-post{
+        height: 50px;
+        font-size: 0.5em;
+        letter-spacing: 0.5px;
+        border-radius: 5px;
+    }
+    .footer{
+        height: 100px;
+        font-size: 0.5em;
+        padding-top: 25px;
+    }
+    .navbar{
+        padding: 0px;
+    }
+}
