@@ -63,15 +63,12 @@ app.post("/addnew", async(req, res)=>{
       }
     
       await db.query("INSERT INTO myanilist (aniname,img,score,description) VALUES ($1, $2, $3, $4)", [aniname.toUpperCase(), img, MAL_score, desc]);
-      console.log(MAL_score);
 
       res.redirect("/");
 
     } catch (error) {
       console.log(error);
     }
-
-   res.redirect("/");
 
 })
 
