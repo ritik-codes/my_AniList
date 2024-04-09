@@ -20,7 +20,7 @@
         <textarea class="form-control" name="addtext" id="addtext" rows="3" placeholder="Add a short after watch review" required></textarea>
       </div>
       <button class="btn btn-outline-success" type="submit">Submit</button>
-      <button class="btn btn-outline-success" onclick="closeForm()" style="background-color: crimson;">Discard</button>
+      <button class="btn btn-outline-success" onclick="closeForm()" style="background-color: crimson;" type="reset">Discard</button>
     </form>
 
     <div class="posts">
@@ -53,7 +53,7 @@
               <form action="/edit" method="post" class="edits">
                 <input type="hidden" class="desc" name="updatedItemId" value="<%= post.id %>">
                 <div>
-                  <textarea id="input<%=post.id%>" class="edit-post" type="text" name="updatedItemTitle"  autocomplete="off" autofocus="true" hidden="true"><%= post.description %></textarea>
+                  <textarea id="input<%=post.id%>" class="edit-post" type="text" name="updatedItemTitle"  autocomplete="off" autofocus="true" hidden="true" required><%= post.description %></textarea>
                 </div>
     
                 <button id="done<%=post.id%>" class="btn btn-outline-success Done-btn" type="submit" hidden>Done</button> 
